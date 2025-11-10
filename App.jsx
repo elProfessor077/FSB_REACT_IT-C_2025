@@ -2,15 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import Login from './component/login.jsx'
 
 function App() {
 
   return (
     <>
-      <div>
-        < h1 className='container'></h1>
-        <h1>Welcome to React</h1>
-        </div>
+     {/* <h2>Welcome to react app</h2> */}
+      <BrowserRouter>
+      <Routes>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/registration' element={<Registration/>}></Route>
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
+      <Route path='/mainlayout' element={<MainLayout/>}></Route>
+
+
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
